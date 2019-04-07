@@ -1,0 +1,40 @@
+/* HEX */
+$gainsboro: #dcdcdd;
+$lavender-gray: #c5c3c6;
+$outer-space: #46494c;
+$blue-dark: rgba(2, 43, 58, 1);
+$blue-light: #1f7a8c;
+$black: #000;
+$white: #fff;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    'gainsboro': $gainsboro,
+    'lavender-gray': $lavender-gray,
+    'outer-space': $outer-space,
+    'blue-dark': $blue-dark,
+    'blue-light': $blue-light,
+    'black': $black,
+    'white': $white
+  ),
+  $colors
+);
+
+@mixin color-modifiers {
+  @each $name, $hex in $colors {
+    &-#{$name} {
+      color: $hex;
+      background-color: $hex;
+    }
+  }
+}
+
+.color {
+  @include color-modifiers;
+}
+
+.bg {
+  @include color-modifiers;
+}

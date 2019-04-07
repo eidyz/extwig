@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Express Twig</title>
+    <link rel='stylesheet' href='/css/app.css' />
+  </head>
+  <body>
+  <header>
+      <nav class="container-fluid bg-outer-space">
+        <div class="row py-3">
+          <div class="col-12 text-right nav-buttons">
+            <a class="mx-2 px-4 py-2" href="/">Home</a>
+            <a class="mx-2 px-4 py-2" href="/users/login">Log In</a>
+            <a class="mx-2 px-4 py-2" href="/users/register">Register</a>
+            {% if user %}
+              <a class="mx-2 px-4 py-2" href="/users/logout">Log out</a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="pt-4">
+    {% block body %}
+    {% endblock %}
+    </main>
+  </body>
+</html>

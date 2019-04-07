@@ -1,0 +1,26 @@
+$shadow: rgba(14, 17, 41, 0.33);
+$btn-blue: #81adf0;
+
+.btn {
+  height: 42px;
+  line-height: 21px;
+  border-radius: 42px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn-cta {
+  background: $btn-blue;
+  color: $white;
+  font-weight: bold;
+  transition: box-shadow 0.25s ease-in-out, background 0.25s ease-in-out;
+
+  &:hover {
+    background: lighten($btn-blue, 5%);
+    color: $white;
+    box-shadow: 0 4px 6px $shadow;
+  }
+}
